@@ -1,0 +1,33 @@
+.home-nav {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 30px;
+}
+
+.logout {
+  font-size: 15px;
+}
+
+.pets {
+  width: 100%;
+}
+
+.pets ul {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(186px, 1fr));
+}
+
+.pet-component {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: 20px;
+  text-transform: capitalize;
+  width: 100%;
+}
+
+.pet-component div:first-of-type {
+  font-size: 20px;
+}
