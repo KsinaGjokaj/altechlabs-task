@@ -9,6 +9,7 @@ Libraries
 - React 18 + TS
 - React Notification
 - React router dom
+- Redux
 
 Routes ( hash router used )
 
