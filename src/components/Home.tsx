@@ -4,9 +4,13 @@ import "../styles/Home.css";
 import Nav from "./Nav";
 import Pets from "./Pets";
 import "../styles/Home.css";
+import { useDispatch, useSelector } from "react-redux";
+import { stateTypes } from "../redux/store";
 
 const Home = () => {
-  const [pets, setPets] = useState([]);
+  const pets = useSelector((state: stateTypes) => state.pets);
+  const loading = useSelector((state: stateTypes) => state.loading);
+  const dispatch = useDispatch();
 
   const fetchData = () => {
     return fetch(
@@ -19,8 +23,10 @@ const Home = () => {
     )
       .then((data) => data.json())
       .then((data) => {
-        console.log(data);
-        setPets(data);
+        dispatch({
+          type: "SET_PETS",
+          payload: data,
+        });
       });
   };
 
@@ -39,9 +45,15 @@ const Home = () => {
       <Nav />
       <div className="pets">
         <ul>
-          {pets.map((petsObj: PetTypes) => (
-            <Pets key={petsObj.id} petsObj={petsObj} />
-          ))}
+          {loading ? (
+            <div className="loading">loading...</div>
+          ) : (
+            pets
+              .slice(0, 30)
+              .map((petsObj: PetTypes, key) => (
+                <Pets key={key} petsObj={petsObj} />
+              ))
+          )}
         </ul>
       </div>
     </>
@@ -55,7 +67,7 @@ export default Home;
 //   name: string;
 //   status: string;
 // }
-type PetTypes = {
+export type PetTypes = {
   id: number;
   name: string;
   status: string;

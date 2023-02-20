@@ -26,8 +26,27 @@
   padding: 20px;
   text-transform: capitalize;
   width: 100%;
+  animation: fadeIn 1s;
+  transform: translateX(0px);
 }
 
 .pet-component div:first-of-type {
   font-size: 20px;
+  padding-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(133, 133, 188);
+}
+
+.pet-component :nth-child(3) {
+  font-family: "Times New Roman", Times, serif;
+  color: rgb(112, 99, 99);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

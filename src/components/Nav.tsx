@@ -1,4 +1,5 @@
 import { NotificationManager } from "react-notifications";
+import logo from "../images/dog.png";
 
 export default () => {
   const logOutHandler = () => {
@@ -9,7 +10,6 @@ export default () => {
     })
       .then((data) => data.json())
       .then((data) => {
-        // console.log('login response', data);
         if (data.code == 200) {
           localStorage.removeItem("user");
           window.location.hash = "#/login";
@@ -27,7 +27,10 @@ export default () => {
   return (
     <header>
       <nav>
-        <h1>Home page - Hello {activeUser}</h1>
+        <img src={logo} width="100px" height="70px" />
+        <h1>Pets Store</h1>
+
+        <p>Hello {activeUser}</p>
         <button onClick={logOutHandler}>LogOut</button>
       </nav>
     </header>
