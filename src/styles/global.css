@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shantell+Sans:ital,wght@1,300&display=swap");
 
 * {
   font-family: "Roboto", sans-serif;
@@ -89,11 +90,14 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 14px;
+  padding: 40px;
 }
 nav h1 {
-  font-size: 22px;
+  font-size: 40px;
   text-transform: capitalize;
+  font-family: "Shantell Sans", cursive;
+  color: rgb(139, 139, 238);
+  margin-right: auto;
 }
 nav button {
   background-color: transparent;
@@ -103,4 +107,18 @@ nav button {
   text-transform: uppercase;
   padding: 5px 15px;
   cursor: pointer;
+}
+
+nav p {
+  margin-right: 20px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  color: rgb(135, 135, 146);
+  text-transform: capitalize;
+}
+
+.loading {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 15%;
 }
